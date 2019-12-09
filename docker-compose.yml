@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.14.0
+    volumes:
+      - ./demo/:/etc/prometheus/
+    ports:
+      - 9090:9090
+
+  alertmanager:
+    image: prom/alertmanager:v0.19.0
+    volumes:
+      - ./demo/:/etc/alertmanager/
+    ports:
+      - 9093:9093
+
+  line-notify-gateway:
+    image: line-notify-gateway:0.0.1
+    build: .
+    ports:
+      - 8080:8080

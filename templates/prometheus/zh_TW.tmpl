@@ -1,0 +1,6 @@
+[狀態]: {{ .Status }}
+[開始時間]: {{ .StartsAt.Format "2 Jan 2006 15:04:05 MST" }}
+[標籤]: {{ range $key, $value := .Labels }}
+  {{ $key }}: {{ $value }}{{ end }}
+[註記]: {{ range $key, $value := .Annotations }}
+  {{ $key }}: {{ $value }}{{ end }}

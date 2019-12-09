@@ -1,0 +1,10 @@
+groups:
+    - name: example
+      rules:
+      - alert: HighGoThreads
+        expr: go_threads > 5
+        for: 10s
+        labels:
+          severity: line
+        annotations:
+          summary: High go threads
