@@ -10,12 +10,10 @@ Supported localized messages:
 * zh_TW
 
 ## Authorization
-----------------
 By setting environment variable (`SECRET`) or command argument (`-s`), the line notify gateway will verify HTTP header: `Authorization: Bearer <secret>` to ensure basic access control.
 
 
 ## Prometheus
--------------
 You can set a Prometheus Alert Manager Webhook to receive LINE notification of alerts.
 
 URL: `<host>:<port>/prometheus`
@@ -23,7 +21,6 @@ URL: `<host>:<port>/prometheus`
 You can refer to the demo setting: [alertmanager.yml](./demo/alertmanager.yml)
 
 ## Github
----------
 You can set a Github Webhook to receive LINE notification about repository changes.
 
 URL: `<your_ip>:<port>/github`
@@ -38,7 +35,6 @@ Supported Events:
 
 
 ## Tester
----------
 You can use it to send a test message via LINE notify
 
 URL: `<host>:<port>/prometheus`
@@ -50,8 +46,6 @@ curl -d "test message" -X POST http://127.0.0.1:8080/tester
 
 
 ## Demo (Prometheus)
---------------------
-
 You will need `docker` and `docker-compose` to run this demo.
 
 1. Please create a `docker-compose.override.yml` file to provide the LINE notify token and gateway secret.
@@ -69,8 +63,6 @@ services:
 
 
 ## References:
---------------
-
 * LINE Notify: https://notify-bot.line.me/en/
 * Prometheus Alert Manager Webhook: https://prometheus.io/docs/alerting/configuration/#webhook_config
 * Github Webhook: https://developer.github.com/webhooks/
