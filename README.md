@@ -37,7 +37,7 @@ Supported Events:
 ## Tester
 You can use it to send a test message via LINE notify
 
-URL: `<host>:<port>/prometheus`
+URL: `<host>:<port>/tester`
 
 Example:
 ```
