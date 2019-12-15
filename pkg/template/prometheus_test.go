@@ -51,7 +51,7 @@ func TestTemplate_RenderPrometheus(t *testing.T) {
 			name: "zh_TW",
 			fields: fields{
 				basePath: "../../templates",
-				locale:   "zh_tw",
+				locale:   "zh_TW",
 			},
 			alert: alertmgr.Alert{
 				Status: "firing",

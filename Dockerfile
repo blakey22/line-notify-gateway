@@ -12,8 +12,8 @@ FROM alpine:3.10
 RUN apk add --no-cache ca-certificates
 
 WORKDIR /app
-COPY --from=build /app .
 COPY ./templates .
+COPY --from=build /app .
 
 EXPOSE 8080
 

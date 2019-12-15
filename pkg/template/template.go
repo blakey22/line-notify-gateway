@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -45,6 +46,11 @@ func (t *Template) render(name, tmplText string, payload interface{}) (string, e
 func (t *Template) load(folder string) (string, error) {
 	fn := fmt.Sprintf("%s.tmpl", t.locale)
 	path := filepath.Join(t.basePath, folder, fn)
+	_, err := os.Stat(path)
+	if err != nil {
+		return "", err
+	}
+
 	dat, err := ioutil.ReadFile(path)
 	if err != nil {
 		log.Printf("fail to load template: %s", path)

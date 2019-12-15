@@ -105,7 +105,7 @@ func Test_githubHandler_Authorize(t *testing.T) {
 				t.Fatal(err)
 			}
 			req.Header.Add("X-Hub-Signature", tt.sign)
-
+			
 			got, err := h.Authorize(req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("githubHandler.Authorize() error = %v, wantErr %v", err, tt.wantErr)
