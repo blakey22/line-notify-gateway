@@ -18,7 +18,11 @@ import (
 func main() {
 	_, err := flags.ParseArgs(&flag.Options, os.Args)
 	if err != nil {
-		panic(err)
+		if flagsErr, ok := err.(*flags.Error); ok && flagsErr.Type == flags.ErrHelp {
+			os.Exit(1)
+		} else {
+			panic(err)
+		}
 	}
 
 	if handler.Count() == 0 {
